@@ -22,7 +22,7 @@ permissions:
 
 env:
   SERVICE: auth-service
-  IMAGE: ${{ vars.DOCKERHUB_USER }}/recommendation-system-auth-service
+  IMAGE: ${{ vars.DOCKERHUB_USER }}/hackathon-recommendation-system-auth-service
 
 jobs:
   test:
