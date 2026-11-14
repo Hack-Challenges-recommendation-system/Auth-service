@@ -1,22 +1,19 @@
 spring:
   application:
-    name: athlete-link-auth-service
+    name: auth-service
   mvc:
     servlet:
       path: /api/v1
   datasource:
-    username: ${POSTGRES_USER:admin}
-    password: ${POSTGRES_PASSWORD:admin}
-    url: ${POSTGRES_DB:jdbc:postgresql://localhost:1234/postgres}
+    url: ${DB_URL:jdbc:postgresql://localhost:1234/postgres}
+    username: ${DB_USERNAME:admin}
+    password: ${DB_PASSWORD:admin}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: validate
       naming:
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: false
     open-in-view: false
   data:
@@ -41,12 +38,12 @@ app:
   kafka:
     topics:
       users-to-create: users.to.create
-      users-to-update: users.to.update
       users-to-delete: users.to.delete
-      notification-messages: notification.messages.requested
 
 jwt:
   secret: ${JWT_SECRET}
+  access-token-ttl: ${JWT_ACCESS_TOKEN_TTL:5m}
+  refresh-token-ttl: ${JWT_REFRESH_TOKEN_TTL:30d}
 
 springdoc:
   api-docs:
@@ -60,7 +57,7 @@ logging:
   level:
     root: INFO
   file:
-    name: /logs/athletelink-auth-service.log
+    name: /logs/auth-service.log
   structured:
     format:
       file: ecs # Loki supports it
