@@ -1,0 +1,6 @@
+jwt:
+  secret: test-secret-for-hs512-that-is-definitely-longer-than-sixty-four-bytes-0123456789
+
+logging:
+  file:
+    name: ""
