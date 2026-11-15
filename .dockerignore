@@ -1,13 +1,3 @@
-.claude/
-.git/
-.idea/
-.env
-.env.*
-target/
-src/test/
-Dockerfile
-.gitignore
-.gitlab-ci.yaml
-README.md
-LICENSE
-docker-compose.yaml
+*
+!pom.xml
+!src
