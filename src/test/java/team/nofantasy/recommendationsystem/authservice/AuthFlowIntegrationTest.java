@@ -23,6 +23,7 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.kafka.KafkaContainer;
 import team.nofantasy.recommendationsystem.authservice.controller.AuthenticationController;
+import team.nofantasy.recommendationsystem.authservice.entity.JwtRefreshToken;
 import team.nofantasy.recommendationsystem.authservice.repository.JwtRefreshTokenRepository;
 import team.nofantasy.recommendationsystem.authservice.repository.UserCredentialsRepository;
 import team.nofantasy.recommendationsystem.authservice.service.RedisService;
@@ -159,10 +160,10 @@ class AuthFlowIntegrationTest {
         assertThat(claims.getSubject()).isEqualTo(userId.toString());
         assertThat(claims.get("type", String.class)).isEqualTo("ACCESS");
 
-        mockMvc.perform(api(get("/api/v1/session")).header("X-User-Id", userId))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.length()").value(1))
-                .andExpect(jsonPath("$[0].userAgent").value("JUnit"));
+        assertThat(jwtRefreshTokenRepository.findAll())
+                .filteredOn(token -> token.getUserCredentials().getUserId().equals(userId))
+                .extracting(JwtRefreshToken::getUserAgent)
+                .containsExactly("JUnit");
 
         mockMvc.perform(api(delete("/api/v1/auth/logout"))
                         .cookie(refreshCookie)

@@ -5,18 +5,11 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import team.nofantasy.recommendationsystem.authservice.dto.controller.session.SessionControllerDto;
-
 import java.time.Instant;
 import java.util.UUID;
 
 /**
- * {@code JwtRefreshToken} contains refresh token data and {@link SessionControllerDto}.
- *
- * <p>
- *     It is necessary to keep one entity and don't split it
- *     since {@link SessionControllerDto} and {@code JwtRefreshToken} share common {@code expiration} field.
- * </p>
+ * {@code JwtRefreshToken} contains refresh token data of one logged-in device.
  */
 @Entity
 @Getter

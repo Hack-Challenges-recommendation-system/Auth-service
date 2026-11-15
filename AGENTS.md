@@ -24,7 +24,6 @@ Registration, login and JWT issuing. It came from the team's earlier project; ro
 | `PUT /user/password` | signed in | `{oldPassword, newPassword}`; 403 if the old one is wrong |
 | `PUT /user/email` | signed in | `{email}`; 409 if taken |
 | `DELETE /user` | signed in | Deletes the account and its sessions → 204 |
-| `GET /session`, `DELETE /session`, `DELETE /session/all` | signed in | Lists or ends device sessions |
 | `GET /health` | anyone | 200 |
 
 "Signed in" means the gateway checked the access token and set `X-User-Id`.
