@@ -1,4 +1,4 @@
-package team.nofantasy.recommendationsystem.authservice.config.kafka;
+package team.nofantasy.recommendationsystem.authservice.configuration.kafka;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

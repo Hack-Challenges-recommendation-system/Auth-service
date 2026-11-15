@@ -3,7 +3,7 @@ package team.nofantasy.recommendationsystem.authservice.service;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import jakarta.persistence.EntityNotFoundException;
-import team.nofantasy.recommendationsystem.authservice.config.JwtProperties;
+import team.nofantasy.recommendationsystem.authservice.configuration.properties.JwtProperties;
 import team.nofantasy.recommendationsystem.authservice.entity.JwtRefreshToken;
 import team.nofantasy.recommendationsystem.authservice.entity.UserCredentials;
 import team.nofantasy.recommendationsystem.authservice.repository.JwtRefreshTokenRepository;

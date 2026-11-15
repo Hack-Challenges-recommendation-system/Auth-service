@@ -23,9 +23,7 @@ public class UserCredentialsController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public void register(
-            @RequestBody @Valid RegisterRequestControllerDto registerRequestControllerDto
-    ) {
+    public void register(@RequestBody @Valid RegisterRequestControllerDto registerRequestControllerDto) {
         log.atInfo()
                 .setMessage("API endpoint is called")
                 .addKeyValue("API endpoint", "POST /user")

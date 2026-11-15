@@ -1,4 +1,4 @@
-package team.nofantasy.recommendationsystem.authservice.config;
+package team.nofantasy.recommendationsystem.authservice.configuration.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

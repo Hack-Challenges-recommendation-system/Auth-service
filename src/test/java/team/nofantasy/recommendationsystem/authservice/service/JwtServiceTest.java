@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.springframework.test.util.ReflectionTestUtils;
-import team.nofantasy.recommendationsystem.authservice.config.JwtProperties;
+import team.nofantasy.recommendationsystem.authservice.configuration.properties.JwtProperties;
 import team.nofantasy.recommendationsystem.authservice.entity.JwtRefreshToken;
 import team.nofantasy.recommendationsystem.authservice.entity.UserCredentials;
 import team.nofantasy.recommendationsystem.authservice.repository.JwtRefreshTokenRepository;

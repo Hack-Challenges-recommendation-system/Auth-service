@@ -3,7 +3,7 @@ package team.nofantasy.recommendationsystem.authservice.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-import team.nofantasy.recommendationsystem.authservice.config.kafka.KafkaTopicsProperties;
+import team.nofantasy.recommendationsystem.authservice.configuration.kafka.KafkaTopicsProperties;
 import team.nofantasy.recommendationsystem.authservice.dto.service.kafka.UserToCreate;
 import team.nofantasy.recommendationsystem.authservice.dto.service.kafka.UserToDelete;
 

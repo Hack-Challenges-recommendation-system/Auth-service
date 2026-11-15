@@ -1,4 +1,4 @@
-package team.nofantasy.recommendationsystem.authservice.config;
+package team.nofantasy.recommendationsystem.authservice.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

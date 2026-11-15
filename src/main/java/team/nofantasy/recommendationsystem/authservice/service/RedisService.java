@@ -3,7 +3,7 @@ package team.nofantasy.recommendationsystem.authservice.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Repository;
-import team.nofantasy.recommendationsystem.authservice.config.JwtProperties;
+import team.nofantasy.recommendationsystem.authservice.configuration.properties.JwtProperties;
 
 @RequiredArgsConstructor
 @Repository
